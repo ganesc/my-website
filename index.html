@@ -3,16 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MRGN | Premium Jacket</title>
+  <title>Rajveer Yadav | Premium Jacket</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <!-- HEADER -->
   <header>
-    <div class="logo">MRGN|PREMIUM</div>
+    <div class="logo">Rajveer Yadav | PREMIUM</div>
     <nav>
+      <a href="index.html">Home</a>
       <a href="#details">Details</a>
       <a href="#reviews">Reviews</a>
+      <a href="https://www.instagram.com/_rajveer.inn" target="_blank">Instagram</a>
+      <a href="https://www.youtube.com/@mrganeshrider" target="_blank">YouTube</a>
       <button id="cart-btn">Cart (<span id="cart-count">0</span>)</button>
     </nav>
   </header>
@@ -24,7 +27,7 @@
       <img src="female.png" alt="Premium Jacket Female Model" class="secondary-img"/>
     </section>
 
-    <section class="product-info">
+    <section class="product-info" id="details">
       <h1>Premium Fashion Jacket</h1>
       <div class="price">₹5499</div>
       <p>
@@ -38,13 +41,35 @@
       </ul>
       <button id="add-to-cart">Add to Cart</button>
     </section>
+
+    <!-- REVIEWS -->
+    <section id="reviews">
+      <h2>Customer Reviews</h2>
+      <p>⭐️⭐️⭐️⭐️☆ — "Super stylish and comfortable!"</p>
+      <p>⭐️⭐️⭐️⭐️⭐️ — "Best jacket I’ve ever purchased."</p>
+    </section>
   </main>
 
   <!-- FOOTER -->
   <footer>
-    © <span id="year"></span> MRGN|PREMIUM — All rights reserved.
+    <p>© <span id="year"></span> Rajveer Yadav | PREMIUM — All rights reserved.</p>
+    <p>
+      Follow me on 
+      <a href="https://www.instagram.com/_rajveer.inn" target="_blank">Instagram</a> | 
+      <a href="https://www.youtube.com/@mrganeshrider" target="_blank">YouTube</a>
+    </p>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    // Dynamic year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Cart
+    let cartCount = 0;
+    document.getElementById("add-to-cart").addEventListener("click", () => {
+      cartCount++;
+      document.getElementById("cart-count").textContent = cartCount;
+    });
+  </script>
 </body>
 </html>
